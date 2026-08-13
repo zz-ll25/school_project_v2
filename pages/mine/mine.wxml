@@ -1,0 +1,61 @@
+<view class="mine safe-bottom">
+
+  <!-- 头部 -->
+  <view class="mine__top">
+    <view class="mine__avatar">🐶</view>
+    <view class="mine__name">{{school.name}} · 新生</view>
+    <view class="mine__slogan">{{school.slogan}}</view>
+  </view>
+
+  <!-- 菜单 -->
+  <view class="mine__card ui-card">
+    <view class="mine__row" bindtap="onFavorites">
+      <view class="mine__icon">⭐</view>
+      <view class="mine__text">我的收藏</view>
+      <view class="mine__badge" wx:if="{{favCount}}">{{favCount}}</view>
+      <view class="mine__arrow">›</view>
+    </view>
+    <view class="mine__row" bindtap="onApplications">
+      <view class="mine__icon">📄</view>
+      <view class="mine__text">我的申请</view>
+      <view class="mine__badge" wx:if="{{appCount}}">{{appCount}}</view>
+      <view class="mine__arrow">›</view>
+    </view>
+    <view class="mine__row" bindtap="onNotice">
+      <view class="mine__icon">📢</view>
+      <view class="mine__text">通知公告</view>
+      <view class="mine__arrow">›</view>
+    </view>
+    <view class="mine__row mine__row--last" bindtap="onSettings">
+      <view class="mine__icon">⚙️</view>
+      <view class="mine__text">设置</view>
+      <view class="mine__arrow">›</view>
+    </view>
+  </view>
+
+  <!-- 校区位置 -->
+  <view class="ui-section">
+    <view class="ui-section__title">校区位置</view>
+    <view class="ui-section__more">点击查看地图 ›</view>
+  </view>
+  <view class="mine__card ui-card">
+    <view
+      class="mine__row"
+      wx:for="{{campuses}}"
+      wx:for-item="cp"
+      wx:key="name"
+      data-index="{{index}}"
+      bindtap="onLocationTap"
+    >
+      <view class="mine__icon">📍</view>
+      <view class="mine__text">
+        <view class="mine__text-main">{{cp.name}}</view>
+        <view class="mine__text-sub">{{cp.addr}}</view>
+      </view>
+      <view class="mine__arrow">›</view>
+    </view>
+  </view>
+
+  <view class="mine__tip">本应用为演示版，数据均为示例内容，请以学校官方通知为准</view>
+
+</view>

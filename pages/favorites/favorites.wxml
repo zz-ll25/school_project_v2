@@ -1,0 +1,29 @@
+<view class="fav safe-bottom">
+
+  <view wx:if="{{items.length}}" class="fav-list">
+    <view
+      class="fav-row ui-card"
+      wx:for="{{items}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="onItemTap"
+    >
+      <view class="fav-row__icon">{{item.icon}}</view>
+      <view class="fav-row__main">
+        <view class="fav-row__title">{{item.title}}</view>
+        <view class="fav-row__summary">{{item.summary}}</view>
+      </view>
+      <view class="fav-row__star" data-id="{{item.id}}" catchtap="onRemove">★</view>
+    </view>
+  </view>
+
+  <empty-state
+    wx:else
+    icon="⭐"
+    title="还没有收藏"
+    desc="在内容详情页点右上角 ⭐ 即可收藏"
+    btnText="去首页逛逛"
+    bind:action="onGoHome"
+  ></empty-state>
+
+</view>

@@ -1,0 +1,47 @@
+/* components/banner/banner.wxss */
+.banner {
+  position: relative;
+  margin: 4rpx 28rpx 8rpx;
+  padding: 44rpx 40rpx;
+  border-radius: 32rpx;
+  overflow: hidden;
+  background: linear-gradient(120deg, #FFB067 0%, #F08537 100%);
+  color: #fff;
+  box-shadow: 0 10rpx 24rpx rgba(240, 133, 55, 0.3);
+}
+.banner__title {
+  font-size: 52rpx;
+  font-weight: 900;
+  letter-spacing: 2rpx;
+}
+.banner__subtitle {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+  opacity: 0.95;
+}
+.banner__mascot {
+  position: absolute;
+  right: 28rpx;
+  bottom: -12rpx;
+  font-size: 120rpx;
+  filter: drop-shadow(0 4rpx 6rpx rgba(0, 0, 0, 0.15));
+}
+.banner__deco {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+.banner__deco--1 {
+  left: -40rpx;
+  top: -40rpx;
+  width: 180rpx;
+  height: 180rpx;
+}
+.banner__deco--2 {
+  right: 120rpx;
+  top: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background: rgba(255, 255, 255, 0.14);
+}

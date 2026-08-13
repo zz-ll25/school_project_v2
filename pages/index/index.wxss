@@ -1,0 +1,119 @@
+/* pages/index/index.wxss */
+.page {
+  min-height: 100vh;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 130rpx);
+}
+
+/* 顶部导航 */
+.nav__bar {
+  display: flex;
+  align-items: center;
+  padding: 12rpx var(--gap-page);
+}
+.nav__info {
+  flex: 1;
+  min-width: 0;
+}
+.nav__name {
+  font-size: 34rpx;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nav__slogan {
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: var(--color-ink-sub);
+}
+.nav__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64rpx;
+  height: 64rpx;
+  margin-left: 16rpx;
+  margin-right: 180rpx; /* 避让微信右上角胶囊按钮 */
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+.nav__search-ico {
+  font-size: 28rpx;
+}
+
+/* 区块横向留白 */
+.section-pad {
+  padding: 0 var(--gap-page);
+}
+
+/* 校区位置双列 */
+.loc-grid {
+  display: flex;
+  gap: 20rpx;
+}
+.loc-item {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 校园介绍横滑 */
+.campus-scroll {
+  white-space: nowrap;
+}
+.campus-track {
+  display: flex;
+  gap: 20rpx;
+  padding: 2rpx var(--gap-page) 6rpx;
+}
+.campus-item {
+  flex: 0 0 300rpx;
+}
+
+/* AI 助手入口 */
+.assistant-entry {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  padding: 28rpx 32rpx;
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, #FFF6EC, #FFEFE0);
+  border: 2rpx solid #FFE0C2;
+  box-shadow: var(--shadow-card);
+}
+.assistant-entry__ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 28rpx;
+  background: linear-gradient(135deg, #36C5CF, #1FA9B4);
+  font-size: 52rpx;
+  flex-shrink: 0;
+}
+.assistant-entry__txt {
+  flex: 1;
+  min-width: 0;
+}
+.assistant-entry__title {
+  font-size: 30rpx;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+.assistant-entry__sub {
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  color: var(--color-ink-sub);
+}
+.assistant-entry__go {
+  font-size: 40rpx;
+  color: var(--color-primary);
+}
+
+.footer-tip {
+  padding: 32rpx 0 8rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: var(--color-ink-sub);
+}

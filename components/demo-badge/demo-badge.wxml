@@ -1,0 +1,1 @@
+<view class="ui-badge demo">{{text}}</view>

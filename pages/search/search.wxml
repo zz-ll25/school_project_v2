@@ -1,0 +1,62 @@
+<view class="search safe-bottom">
+
+  <!-- 搜索框 -->
+  <view class="s-box">
+    <view class="s-box__inner">
+      <text class="s-box__ico">🔍</text>
+      <input
+        class="s-box__input"
+        placeholder="搜索指南、服务、地点…"
+        placeholder-class="s-box__ph"
+        value="{{query}}"
+        focus="{{focusInput}}"
+        confirm-type="search"
+        bindinput="onInput"
+      />
+      <text class="s-box__clear" wx:if="{{query}}" bindtap="onClear">✕</text>
+    </view>
+  </view>
+
+  <!-- 热门搜索（空 query 时） -->
+  <view wx:if="{{!query && hot.length}}" class="s-hot">
+    <view class="s-hot__title">热门搜索</view>
+    <view class="s-hot__chips">
+      <view class="s-hot__chip" wx:for="{{hot}}" wx:key="*this" data-q="{{item}}" bindtap="onChipTap">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 分组结果 -->
+  <block wx:if="{{query}}">
+    <view class="s-group" wx:for="{{groups}}" wx:for-item="g" wx:key="key">
+      <view class="s-group__head">{{g.label}} · {{g.results.length}} 条</view>
+      <view
+        class="s-result ui-card"
+        wx:for="{{g.results}}"
+        wx:for-item="r"
+        wx:key="item.id"
+        data-id="{{r.item.id}}"
+        bindtap="onResultTap"
+      >
+        <view class="s-result__icon">{{r.item.icon}}</view>
+        <view class="s-result__main">
+          <view class="s-result__title">
+            <text wx:for="{{r.titleSegs}}" wx:for-item="seg" wx:key="index" class="{{seg.hl ? 'hl' : ''}}">{{seg.t}}</text>
+          </view>
+          <view class="s-result__summary">
+            <text wx:for="{{r.summarySegs}}" wx:for-item="seg" wx:key="index" class="{{seg.hl ? 'hl' : ''}}">{{seg.t}}</text>
+          </view>
+        </view>
+        <view class="s-result__go">›</view>
+      </view>
+    </view>
+
+    <!-- 无结果 -->
+    <empty-state
+      wx:if="{{query && !searching && !groups.length}}"
+      icon="🔍"
+      title="没有找到相关内容"
+      desc="换个关键词试试，例如「报到」「宿舍」"
+    ></empty-state>
+  </block>
+
+</view>

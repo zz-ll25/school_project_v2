@@ -1,0 +1,7 @@
+<view class="ccard">
+  <view class="ccard__cover">{{cover}}</view>
+  <view class="ccard__body">
+    <view class="ccard__title">{{title}}</view>
+    <view class="ccard__summary">{{summary}}</view>
+  </view>
+</view>

@@ -1,0 +1,91 @@
+<view class="page safe-bottom">
+  <!-- 自定义顶部导航栏 -->
+  <view class="nav" style="padding-top: {{statusBarHeight}}px;">
+    <view class="nav__bar">
+      <view class="nav__info">
+        <view class="nav__name">{{school.name}}</view>
+        <view class="nav__slogan">{{school.slogan}}</view>
+      </view>
+      <view class="nav__search" bindtap="onSearch">
+        <text class="nav__search-ico">🔍</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 横幅 -->
+  <banner title="{{school.bannerTitle}}" subtitle="{{school.bannerSub}}"></banner>
+
+  <!-- 新生必看 -->
+  <view class="ui-section">
+    <view class="ui-section__title">新生必看</view>
+    <view class="ui-section__more">{{guide.length}} 项入学指南</view>
+  </view>
+  <view class="section-pad">
+    <grid-menu columns="{{5}}" list="{{guide}}" bind:select="onSelect"></grid-menu>
+  </view>
+
+  <!-- 校园服务 -->
+  <view class="ui-section">
+    <view class="ui-section__title">校园服务</view>
+    <view class="ui-section__more">一站式办理</view>
+  </view>
+  <view class="section-pad">
+    <grid-menu columns="{{2}}" list="{{services}}" bind:select="onSelect"></grid-menu>
+  </view>
+
+  <!-- 校区位置 -->
+  <view class="ui-section">
+    <view class="ui-section__title">校区位置</view>
+    <view class="ui-section__more">点击查看地图 ›</view>
+  </view>
+  <view class="section-pad">
+    <view class="loc-grid">
+      <view
+        class="loc-item"
+        wx:for="{{campuses}}"
+        wx:key="name"
+        data-index="{{index}}"
+        bindtap="onLocationTap"
+      >
+        <campus-card title="{{item.name}}" summary="{{item.addr}}" cover="📍"></campus-card>
+      </view>
+    </view>
+  </view>
+
+  <!-- 校园介绍 -->
+  <view class="ui-section">
+    <view class="ui-section__title">校园介绍</view>
+    <view class="ui-section__more">滑动看看 ›</view>
+  </view>
+  <scroll-view class="campus-scroll" scroll-x enable-flex>
+    <view class="campus-track">
+      <view
+        class="campus-item"
+        wx:for="{{tour}}"
+        wx:key="id"
+        data-id="{{item.id}}"
+        bindtap="onCampusTap"
+      >
+        <campus-card title="{{item.title}}" summary="{{item.summary}}" cover="{{item.cover}}"></campus-card>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- AI 新生助手 -->
+  <view class="ui-section">
+    <view class="ui-section__title">AI 新生助手</view>
+    <view class="ui-section__more">有问必答 ›</view>
+  </view>
+  <view class="section-pad">
+    <view class="assistant-entry" bindtap="onAssistant">
+      <view class="assistant-entry__ico">🤖</view>
+      <view class="assistant-entry__txt">
+        <view class="assistant-entry__title">成电新生助手</view>
+        <view class="assistant-entry__sub">报到 / 宿舍 / 选课 / 交通，随时问我</view>
+      </view>
+      <view class="assistant-entry__go">›</view>
+    </view>
+  </view>
+
+  <view class="footer-tip">本应用为演示版，数据均为示例内容</view>
+</view>

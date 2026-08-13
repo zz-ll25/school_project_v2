@@ -1,0 +1,100 @@
+/* pages/mine/mine.wxss */
+.mine {
+  min-height: 100vh;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 140rpx);
+}
+
+/* 头部 */
+.mine__top {
+  padding: 60rpx 40rpx 40rpx;
+  background: linear-gradient(135deg, #FFB067, #F08537);
+  color: #fff;
+}
+.mine__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 40rpx;
+  background: #fff;
+  font-size: 72rpx;
+  box-shadow: 0 6rpx 16rpx rgba(0, 0, 0, 0.15);
+}
+.mine__name {
+  margin-top: 24rpx;
+  font-size: 38rpx;
+  font-weight: 800;
+}
+.mine__slogan {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  opacity: 0.92;
+}
+
+/* 菜单卡 */
+.mine__card {
+  margin: 24rpx var(--gap-page) 0;
+  padding: 8rpx 32rpx;
+}
+.mine__card--overlap {
+  margin-top: -32rpx;
+}
+.mine__row {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  padding: 28rpx 0;
+  border-bottom: 2rpx solid var(--color-line);
+}
+.mine__row--last {
+  border-bottom: none;
+}
+.mine__icon {
+  font-size: 40rpx;
+  width: 48rpx;
+  text-align: center;
+  flex-shrink: 0;
+}
+.mine__text {
+  flex: 1;
+  min-width: 0;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.mine__text-main {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.mine__text-sub {
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: var(--color-ink-sub);
+  font-weight: 400;
+}
+.mine__badge {
+  flex-shrink: 0;
+  min-width: 36rpx;
+  height: 36rpx;
+  padding: 0 10rpx;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 22rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mine__arrow {
+  flex-shrink: 0;
+  font-size: 32rpx;
+  color: var(--color-ink-sub);
+}
+
+.mine__tip {
+  padding: 32rpx var(--gap-page) 8rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: var(--color-ink-sub);
+}

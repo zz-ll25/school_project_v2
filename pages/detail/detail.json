@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "详情",
+  "usingComponents": {
+    "demo-badge": "/components/demo-badge/demo-badge"
+  }
+}

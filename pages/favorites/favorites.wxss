@@ -1,0 +1,50 @@
+/* pages/favorites/favorites.wxss */
+.fav {
+  min-height: 100vh;
+}
+.fav-list {
+  padding: 24rpx var(--gap-page) 0;
+}
+.fav-row {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  padding: 26rpx 28rpx;
+  margin-bottom: 16rpx;
+}
+.fav-row__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 22rpx;
+  background: var(--color-primary-soft);
+  font-size: 40rpx;
+  flex-shrink: 0;
+}
+.fav-row__main {
+  flex: 1;
+  min-width: 0;
+}
+.fav-row__title {
+  font-size: 29rpx;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.fav-row__summary {
+  margin-top: 6rpx;
+  font-size: 23rpx;
+  color: var(--color-ink-sub);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.fav-row__star {
+  flex-shrink: 0;
+  padding: 12rpx;
+  font-size: 40rpx;
+  color: var(--color-primary);
+}

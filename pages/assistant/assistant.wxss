@@ -1,0 +1,125 @@
+/* pages/assistant/assistant.wxss */
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* 消息区 */
+.chat__body {
+  flex: 1;
+  min-height: 0;
+  padding: 24rpx 28rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  box-sizing: border-box;
+}
+.chat__msg {
+  display: flex;
+  max-width: 80%;
+}
+.chat__msg--assistant {
+  align-self: flex-start;
+}
+.chat__msg--user {
+  align-self: flex-end;
+}
+.chat__text {
+  padding: 20rpx 28rpx;
+  border-radius: 24rpx;
+  font-size: 28rpx;
+  line-height: 1.7;
+  word-break: break-all;
+}
+.chat__msg--assistant .chat__text {
+  background: #fff;
+  border-bottom-left-radius: 8rpx;
+  box-shadow: var(--shadow-card);
+  color: var(--color-ink);
+}
+.chat__msg--user .chat__text {
+  background: linear-gradient(135deg, #FFB067, #F08537);
+  border-bottom-right-radius: 8rpx;
+  color: #fff;
+}
+
+/* 快捷提问 */
+.chat__quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  align-self: flex-start;
+}
+.chat__chip {
+  padding: 12rpx 28rpx;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 24rpx;
+  font-weight: 600;
+}
+.chat__chip:active {
+  opacity: 0.7;
+}
+
+.chat__space {
+  height: 8rpx;
+  flex-shrink: 0;
+}
+
+/* 底部输入 */
+.chat__footer {
+  flex-shrink: 0;
+  background: #fff;
+  border-top: 2rpx solid var(--color-line);
+}
+.chat__tool {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12rpx 28rpx 0;
+}
+.chat__clear {
+  font-size: 22rpx;
+  color: var(--color-ink-sub);
+}
+.chat__bar {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  padding: 16rpx 28rpx 20rpx;
+}
+.chat__input {
+  flex: 1;
+  height: 76rpx;
+  padding: 0 28rpx;
+  border: 2rpx solid var(--color-line);
+  border-radius: 38rpx;
+  background: #FCFAF7;
+  font-size: 27rpx;
+  color: var(--color-ink);
+}
+.chat__ph {
+  color: #B8AFA4;
+}
+.chat__send {
+  flex-shrink: 0;
+  height: 76rpx;
+  padding: 0 36rpx;
+  border: none;
+  border-radius: 38rpx;
+  background: linear-gradient(135deg, #FFB067, #F08537);
+  color: #fff;
+  font-size: 27rpx;
+  font-weight: 700;
+  line-height: 76rpx;
+}
+.chat__send::after {
+  border: none;
+}
+.chat__send.is-stop {
+  background: #E3D9CD;
+  color: var(--color-ink-sub);
+}

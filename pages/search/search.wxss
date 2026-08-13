@@ -1,0 +1,125 @@
+/* pages/search/search.wxss */
+.search {
+  min-height: 100vh;
+}
+
+/* 搜索框 */
+.s-box {
+  padding: 20rpx var(--gap-page) 8rpx;
+  background: var(--bg-page);
+}
+.s-box__inner {
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+  height: 84rpx;
+  padding: 0 24rpx;
+  background: #fff;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-card);
+}
+.s-box__ico {
+  font-size: 28rpx;
+}
+.s-box__input {
+  flex: 1;
+  font-size: 27rpx;
+  color: var(--color-ink);
+}
+.s-box__ph {
+  color: #B8AFA4;
+}
+.s-box__clear {
+  padding: 8rpx;
+  color: var(--color-ink-sub);
+  font-size: 28rpx;
+}
+
+/* 热门搜索 */
+.s-hot {
+  padding: 32rpx var(--gap-page);
+}
+.s-hot__title {
+  font-size: 24rpx;
+  color: var(--color-ink-sub);
+  font-weight: 600;
+}
+.s-hot__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  margin-top: 20rpx;
+}
+.s-hot__chip {
+  padding: 12rpx 28rpx;
+  background: #fff;
+  border-radius: var(--radius-pill);
+  font-size: 26rpx;
+  color: var(--color-ink);
+  box-shadow: var(--shadow-soft);
+}
+.s-hot__chip:active {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+/* 结果分组 */
+.s-group {
+  padding: 8rpx var(--gap-page) 0;
+}
+.s-group__head {
+  padding: 20rpx 4rpx 16rpx;
+  font-size: 24rpx;
+  font-weight: 700;
+  color: var(--color-ink-sub);
+}
+.s-result {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  padding: 24rpx 28rpx;
+  margin-bottom: 16rpx;
+}
+.s-result__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 22rpx;
+  background: var(--color-primary-soft);
+  font-size: 40rpx;
+  flex-shrink: 0;
+}
+.s-result__main {
+  flex: 1;
+  min-width: 0;
+}
+.s-result__title {
+  font-size: 29rpx;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.s-result__summary {
+  margin-top: 6rpx;
+  font-size: 23rpx;
+  color: var(--color-ink-sub);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.s-result__go {
+  font-size: 32rpx;
+  color: var(--color-ink-sub);
+  flex-shrink: 0;
+}
+
+/* 命中高亮 */
+.hl {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  border-radius: 4rpx;
+  font-weight: 700;
+}

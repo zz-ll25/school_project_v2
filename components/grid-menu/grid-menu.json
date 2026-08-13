@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "entry-icon": "/components/entry-icon/entry-icon"
+  }
+}

@@ -1,0 +1,55 @@
+<view class="chat safe-bottom">
+
+  <!-- 消息区 -->
+  <scroll-view
+    class="chat__body"
+    scroll-y
+    scroll-into-view="{{scrollInto}}"
+    scroll-with-animation
+  >
+    <view
+      class="chat__msg chat__msg--{{item.role}}"
+      wx:for="{{messages}}"
+      wx:key="index"
+      id="msg-{{index}}"
+    >
+      <text class="chat__text" user-select>{{item.text}}</text>
+    </view>
+
+    <!-- 快捷提问（仅初始消息时显示） -->
+    <view class="chat__quick" wx:if="{{!sending && messages.length === 1}}">
+      <view
+        class="chat__chip"
+        wx:for="{{quick}}"
+        wx:key="*this"
+        data-q="{{item}}"
+        bindtap="onChipTap"
+      >{{item}}</view>
+    </view>
+
+    <view class="chat__space"></view>
+  </scroll-view>
+
+  <!-- 工具行 + 输入 -->
+  <view class="chat__footer">
+    <view class="chat__tool" wx:if="{{messages.length > 1}}">
+      <text class="chat__clear" bindtap="onClear">🗑 清空对话</text>
+    </view>
+    <view class="chat__bar">
+      <input
+        class="chat__input"
+        value="{{input}}"
+        placeholder="输入你的问题…"
+        placeholder-class="chat__ph"
+        confirm-type="send"
+        bindinput="onInput"
+        bindconfirm="onSendOrStop"
+        disabled="{{sending}}"
+      />
+      <button class="chat__send {{sending ? 'is-stop' : ''}}" bindtap="onSendOrStop">
+        {{sending ? '停止' : '发送'}}
+      </button>
+    </view>
+  </view>
+
+</view>

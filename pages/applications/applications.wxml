@@ -1,0 +1,38 @@
+<view class="app safe-bottom">
+
+  <view wx:if="{{list.length}}" class="app-list">
+    <view class="app-item ui-card" wx:for="{{list}}" wx:key="id">
+      <view class="app-item__head" data-id="{{item.id}}" bindtap="onToggleExpand">
+        <view class="app-item__icon">📄</view>
+        <view class="app-item__main">
+          <view class="app-item__title">{{item.formTitle}}</view>
+          <view class="app-item__time">{{item.timeText}}</view>
+        </view>
+        <view class="app-item__status">已提交（本地保存）</view>
+        <view class="app-item__arrow {{expandedId === item.id ? 'is-open' : ''}}">›</view>
+      </view>
+
+      <!-- 展开详情 -->
+      <view wx:if="{{expandedId === item.id}}" class="app-item__detail">
+        <view class="app-item__warn" wx:if="{{item.outdated}}">表单已更新，历史记录仅作参考</view>
+        <view class="app-item__field" wx:for="{{item.fields}}" wx:for-item="fld" wx:key="key">
+          <text class="app-item__label">{{fld.label}}</text>
+          <text class="app-item__value">{{fld.value || '—'}}</text>
+        </view>
+        <view class="app-item__actions">
+          <button class="ui-btn ui-btn--ghost app-item__del" data-id="{{item.id}}" bindtap="onRemove">删除</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <empty-state
+    wx:else
+    icon="📄"
+    title="还没有申请记录"
+    desc="在「校园服务」提交表单后，记录会保存在这里"
+    btnText="去办理"
+    bind:action="onGoHome"
+  ></empty-state>
+
+</view>

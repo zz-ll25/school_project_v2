@@ -1,0 +1,19 @@
+/* components/grid-menu/grid-menu.wxss */
+.grid {
+  display: grid;
+  gap: 16rpx 10rpx;
+}
+.grid--cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid--cols-4 { grid-template-columns: repeat(4, 1fr); }
+.grid--cols-5 { grid-template-columns: repeat(5, 1fr); }
+
+.grid__cell {
+  padding: 20rpx 4rpx;
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+.grid__cell:active {
+  transform: scale(0.95);
+}

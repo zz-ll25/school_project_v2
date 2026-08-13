@@ -1,0 +1,92 @@
+/* pages/applications/applications.wxss */
+.app {
+  min-height: 100vh;
+}
+.app-list {
+  padding: 24rpx var(--gap-page) 0;
+}
+.app-item {
+  padding: 24rpx 28rpx;
+  margin-bottom: 16rpx;
+}
+.app-item__head {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.app-item__icon {
+  font-size: 40rpx;
+  flex-shrink: 0;
+}
+.app-item__main {
+  flex: 1;
+  min-width: 0;
+}
+.app-item__title {
+  font-size: 28rpx;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.app-item__time {
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: var(--color-ink-sub);
+}
+.app-item__status {
+  flex-shrink: 0;
+  padding: 4rpx 14rpx;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 20rpx;
+  font-weight: 600;
+}
+.app-item__arrow {
+  flex-shrink: 0;
+  font-size: 32rpx;
+  color: var(--color-ink-sub);
+  transition: transform 0.15s;
+}
+.app-item__arrow.is-open {
+  transform: rotate(90deg);
+}
+
+/* 展开详情 */
+.app-item__detail {
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 2rpx solid var(--color-line);
+}
+.app-item__warn {
+  margin-bottom: 16rpx;
+  padding: 14rpx 20rpx;
+  border-radius: var(--radius-sm);
+  background: var(--color-warn-bg);
+  color: var(--color-warn-ink);
+  font-size: 22rpx;
+}
+.app-item__field {
+  display: flex;
+  padding: 10rpx 0;
+  font-size: 25rpx;
+}
+.app-item__label {
+  width: 200rpx;
+  flex-shrink: 0;
+  color: var(--color-ink-sub);
+}
+.app-item__value {
+  flex: 1;
+  word-break: break-all;
+}
+.app-item__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16rpx;
+}
+.app-item__del {
+  padding: 12rpx 40rpx;
+  font-size: 24rpx;
+}

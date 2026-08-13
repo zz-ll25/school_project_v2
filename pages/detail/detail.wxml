@@ -1,0 +1,126 @@
+<view class="detail safe-bottom" wx:if="{{item}}">
+
+  <!-- 头部：图标 + 标题 + 摘要 + 收藏 -->
+  <view class="d-head ui-card">
+    <view class="d-head__top">
+      <view class="d-head__icon">{{item.icon}}</view>
+      <view class="d-head__main">
+        <view class="d-head__title-row">
+          <view class="d-head__title">{{item.title}}</view>
+          <demo-badge wx:if="{{item.demo}}" />
+        </view>
+        <view class="d-head__summary">{{item.summary}}</view>
+      </view>
+      <view class="d-head__fav {{fav ? 'is-fav' : ''}}" wx:if="{{item.favoritable}}" bindtap="onToggleFav">★</view>
+    </view>
+  </view>
+
+  <!-- list 类型：可勾选清单 -->
+  <view wx:if="{{type === 'list'}}" class="d-block">
+    <view class="d-progress ui-card">
+      <view class="d-progress__txt">已完成 {{doneCount}} / {{items.length}} 项</view>
+      <view class="d-progress__bar">
+        <view class="d-progress__fill" style="width: {{items.length ? doneCount * 100 / items.length : 0}}%;"></view>
+      </view>
+    </view>
+    <view
+      class="d-check ui-card {{it.done ? 'is-done' : ''}}"
+      wx:for="{{items}}"
+      wx:for-item="it"
+      wx:for-index="idx"
+      wx:key="text"
+      data-idx="{{idx}}"
+      bindtap="onToggleItem"
+    >
+      <view class="d-check__box">{{it.done ? '✓' : ''}}</view>
+      <view class="d-check__text">{{it.text}}</view>
+    </view>
+  </view>
+
+  <!-- article 类型：图文段落 -->
+  <view wx:if="{{type === 'article'}}" class="d-block">
+    <view class="d-para ui-card" wx:for="{{item.content.paragraphs}}" wx:for-item="para" wx:key="h">
+      <view class="d-para__h">{{para.h}}</view>
+      <view class="d-para__p">{{para.p}}</view>
+    </view>
+  </view>
+
+  <!-- notice 类型：公告流 -->
+  <view wx:if="{{type === 'notice'}}" class="d-block">
+    <view class="d-notice ui-card" wx:for="{{item.content.items}}" wx:for-item="ntc" wx:key="title">
+      <view class="d-notice__top">
+        <text class="d-notice__date">{{ntc.date}}</text>
+        <text class="d-notice__title">{{ntc.title}}</text>
+      </view>
+      <view class="d-notice__body">{{ntc.body}}</view>
+    </view>
+  </view>
+
+  <!-- link 类型：外链 / 拨号 -->
+  <view wx:if="{{type === 'link'}}" class="d-block">
+    <view class="d-link ui-card">
+      <view class="d-link__desc">{{item.content.desc}}</view>
+      <button class="ui-btn ui-btn--primary d-link__btn" bindtap="onLinkBtn">{{item.content.btnText}}</button>
+    </view>
+    <view wx:if="{{item.content.extra}}" class="d-block d-block--flush">
+      <view
+        class="d-tel ui-card"
+        wx:for="{{item.content.extra}}"
+        wx:for-item="ex"
+        wx:key="label"
+        data-tel="{{ex.tel}}"
+        bindtap="onCall"
+      >
+        <text class="d-tel__label">{{ex.label}}</text>
+        <text class="d-tel__tel">{{ex.tel}}</text>
+        <text class="d-tel__call">拨打 ›</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- form 类型：表单提交 -->
+  <view wx:if="{{type === 'form'}}" class="d-block">
+    <view class="d-form ui-card">
+      <view class="d-form__intro">{{item.content.intro}}</view>
+      <view class="d-field" wx:for="{{item.content.fields}}" wx:for-item="fld" wx:key="key">
+        <view class="d-field__label">{{fld.label}}<text class="d-field__req" wx:if="{{fld.required}}"> *</text></view>
+        <input
+          wx:if="{{fld.type === 'text' || fld.type === 'number'}}"
+          class="d-field__input {{errors[fld.key] ? 'is-error' : ''}}"
+          type="{{fld.type === 'number' ? 'number' : 'text'}}"
+          maxlength="{{fld.maxlength || -1}}"
+          placeholder="{{fld.placeholder}}"
+          value="{{form[fld.key]}}"
+          data-key="{{fld.key}}"
+          bindinput="onFieldInput"
+        />
+        <textarea
+          wx:elif="{{fld.type === 'textarea'}}"
+          class="d-field__input d-field__textarea {{errors[fld.key] ? 'is-error' : ''}}"
+          placeholder="{{fld.placeholder}}"
+          value="{{form[fld.key]}}"
+          data-key="{{fld.key}}"
+          bindinput="onFieldInput"
+        />
+        <picker
+          wx:else
+          mode="selector"
+          range="{{fld.options}}"
+          data-key="{{fld.key}}"
+          data-options="{{fld.options}}"
+          bindchange="onFieldPicker"
+        >
+          <view class="d-field__input d-field__picker {{form[fld.key] ? '' : 'is-ph'}} {{errors[fld.key] ? 'is-error' : ''}}">
+            {{form[fld.key] || fld.placeholder}}
+          </view>
+        </picker>
+        <view class="d-field__error" wx:if="{{errors[fld.key]}}">{{errors[fld.key]}}</view>
+      </view>
+      <button class="ui-btn ui-btn--primary d-form__submit" bindtap="onSubmit">提交</button>
+    </view>
+  </view>
+
+  <!-- 免责声明（全类型） -->
+  <view class="ui-disclaimer">本页内容为演示数据，如有出入请以学校官方通知为准。</view>
+
+</view>

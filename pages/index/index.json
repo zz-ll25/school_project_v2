@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "banner": "/components/banner/banner",
+    "grid-menu": "/components/grid-menu/grid-menu",
+    "campus-card": "/components/campus-card/campus-card"
+  }
+}

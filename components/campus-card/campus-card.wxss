@@ -1,0 +1,34 @@
+/* components/campus-card/campus-card.wxss */
+/* 宽度由父容器控制（横滑轨道 / 双列网格） */
+.ccard {
+  width: 100%;
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.ccard__cover {
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 88rpx;
+  background: linear-gradient(135deg, var(--color-primary-soft), #fff);
+}
+.ccard__body {
+  padding: 20rpx 24rpx 24rpx;
+}
+.ccard__title {
+  font-size: 30rpx;
+  font-weight: 800;
+}
+.ccard__summary {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: var(--color-ink-sub);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}

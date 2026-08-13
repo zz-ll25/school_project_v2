@@ -1,0 +1,7 @@
+<view class="entry">
+  <view class="entry__circle">
+    <text class="entry__icon">{{icon}}</text>
+    <view class="entry__badge" wx:if="{{badge}}">{{badge}}</view>
+  </view>
+  <view class="entry__title">{{title}}</view>
+</view>

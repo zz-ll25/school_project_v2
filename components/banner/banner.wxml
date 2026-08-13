@@ -1,0 +1,7 @@
+<view class="banner">
+  <view class="banner__deco banner__deco--1"></view>
+  <view class="banner__deco banner__deco--2"></view>
+  <view class="banner__title">{{title}}</view>
+  <view class="banner__subtitle" wx:if="{{subtitle}}">{{subtitle}}</view>
+  <view class="banner__mascot">{{mascot}}</view>
+</view>

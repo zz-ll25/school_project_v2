@@ -1,0 +1,4 @@
+/* components/demo-badge/demo-badge.wxss */
+.demo {
+  display: inline-flex;
+}
