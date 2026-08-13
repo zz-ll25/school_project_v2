@@ -1,0 +1,14 @@
+# 依赖
+node_modules/
+
+# 敏感凭据（COZE_PAT 等，勿提交）
+server/.env
+
+# 微信开发者工具私有配置
+project.private.config.json
+
+# 系统 / 日志
+.DS_Store
+Thumbs.db
+*.log
+.workbuddy/

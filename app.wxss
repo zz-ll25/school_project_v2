@@ -1,0 +1,119 @@
+/* app.wxss —— 全局设计 token 与通用类 */
+
+page {
+  /* 颜色 */
+  --bg-page: #FDF8F3;          /* 奶油白底 */
+  --bg-card: #FFFFFF;
+  --color-primary: #F08537;    /* 主橙 */
+  --color-primary-soft: #FDEBDD;
+  --color-accent: #3D7CC9;     /* 青蓝点缀 */
+  --color-ink: #2A2118;
+  --color-ink-sub: #8B7E70;
+  --color-line: #F0E7DD;
+  --color-danger: #E5533D;
+  --color-warn-bg: #FFF6E0;
+  --color-warn-ink: #8A6D1D;
+
+  /* 圆角 / 阴影 / 间距 */
+  --radius-card: 24rpx;
+  --radius-sm: 16rpx;
+  --radius-pill: 999rpx;
+  --shadow-card: 0 6rpx 20rpx rgba(92, 58, 33, 0.06);
+  --shadow-soft: 0 3rpx 12rpx rgba(92, 58, 33, 0.04);
+  --gap-page: 32rpx;
+
+  background: var(--bg-page);
+  color: var(--color-ink);
+  font-size: 28rpx;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+view, text, scroll-view, navigator, button, image, input, textarea {
+  box-sizing: border-box;
+}
+
+/* 通用卡片 */
+.ui-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+/* 区块标题行 */
+.ui-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40rpx var(--gap-page) 24rpx;
+}
+.ui-section__title {
+  position: relative;
+  padding-left: 20rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.ui-section__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8rpx;
+  height: 32rpx;
+  border-radius: 4rpx;
+  background: var(--color-primary);
+}
+.ui-section__more {
+  font-size: 24rpx;
+  color: var(--color-ink-sub);
+}
+
+/* 底部安全区 */
+.safe-bottom {
+  padding-bottom: calc(env(safe-area-inset-bottom) + 40rpx);
+}
+
+/* 「示例」徽章（演示数据标注） */
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4rpx 16rpx;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 22rpx;
+  font-weight: 600;
+}
+
+/* 免责声明 */
+.ui-disclaimer {
+  margin: 32rpx var(--gap-page) 0;
+  padding: 20rpx 24rpx;
+  border-radius: var(--radius-sm);
+  background: #F6F1EA;
+  color: var(--color-ink-sub);
+  font-size: 22rpx;
+  line-height: 1.6;
+}
+
+/* 按钮 */
+.ui-btn {
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 28rpx;
+  font-weight: 600;
+  line-height: 1;
+}
+.ui-btn::after {
+  border: none;
+}
+.ui-btn--primary {
+  background: linear-gradient(135deg, #FFB067, #F08537);
+  color: #fff;
+}
+.ui-btn--ghost {
+  background: #fff;
+  color: var(--color-primary);
+  border: 2rpx solid var(--color-primary);
+}
