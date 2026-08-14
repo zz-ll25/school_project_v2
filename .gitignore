@@ -3,6 +3,10 @@ node_modules/
 
 # 敏感凭据（COZE_PAT 等，勿提交）
 server/.env
+website/back/.env
+
+# 网站前端构建产物
+website/front/dist
 
 # 微信开发者工具私有配置
 project.private.config.json

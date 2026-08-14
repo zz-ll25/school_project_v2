@@ -1,0 +1,73 @@
+/* styles/theme.css —— 全局主题：暖色系，覆盖 Element Plus 主色变量 */
+:root {
+  /* 主色 #F08537 九档（light-3/5/7/8/9 混白，dark-2 混黑 20%） */
+  --el-color-primary: #f08537;
+  --el-color-primary-light-3: #f5aa73;
+  --el-color-primary-light-5: #f8c29b;
+  --el-color-primary-light-7: #fbdac3;
+  --el-color-primary-light-8: #fce7d7;
+  --el-color-primary-light-9: #fef3eb;
+  --el-color-primary-dark-2: #c06a2c;
+
+  /* 页面底色延续小程序暖色 */
+  --page-bg: #fdf8f3;
+  --text-main: #4a4038;
+  --text-sub: #8b7e70;
+  --danger: #e5533d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--page-bg);
+  color: var(--text-main);
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* 页面容器 */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* 卡片 */
+.ui-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(139, 126, 112, 0.08);
+}
+
+/* 区块标题 */
+.ui-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 示例徽章（延续小程序 demo-badge 惯例） */
+.demo-badge {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--el-color-primary);
+  background: var(--el-color-primary-light-9);
+  border: 1px solid var(--el-color-primary-light-5);
+  border-radius: 4px;
+  padding: 0 6px;
+  line-height: 18px;
+  vertical-align: middle;
+}
